@@ -20,11 +20,3 @@ def nakresli_1_riadok(sirka):
 vyska=int(input("zadaj cislo: "))
 sirka=int(input("zadaj cislo: "))
 nakresli_cele_pole()
-
-# riadok má 2 časti:
-# - horny oddelovac     +-+-+-+-+
-# - policko so znakom   |*|*|*|*|
-
-# policko má 2 časti:
-# - horny oddelovac     +-
-# - policko so znakom   |*
