@@ -41,10 +41,32 @@ def vypln_hracie_pole():
 
 def spustit_hru():
     while True:
-        vyska_1 = int(input("zadaj cislo(v): "))
-        sirka_1 = int(input("zadaj cislo(s): "))
-        hra[vyska_1][sirka_1] = "X"
         nakresli_cele_pole()
+        while True:
+            vstup_v = input("zadaj cislo riadku <3: ")
+            if not vstup_v.isdigit():
+                print("zadaj cislo ne?")
+                continue
+            vyska_1 = int(vstup_v)
+            if vyska_1 < 0 or vyska_1 >= vyska:
+                print(f"riadok musi byt 0 az {vyska - 1}.")
+                continue
+            break
+        while True:
+            vstup_s = input("zadaj cislo stlpca <3: ")
+            if not vstup_s.isdigit():
+                print("zadaj cislo ne?")
+                continue
+            sirka_1 = int(vstup_s)
+            if sirka_1 < 0 or sirka_1 >= sirka:
+                print(f"stlpec musi byt 0 az {sirka - 1}.")
+                continue
+            break
+        if hra[vyska_1][sirka_1] != " ":
+            print("obsadene policko kamarat :)")
+            continue
+        hra[vyska_1][sirka_1] = "X"
+
 
 
 vyska = int(input("zadaj cislo: "))
